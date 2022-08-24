@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <title>Funemployed</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div id="MainPage" class="flex-container" style="padding-top: 50px">
+        <div class="select">
+          <p>Oyuncu Sayısı Belirleyin</p>
+          <select id="numOfPlayers" onchange="formChanging();">
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+        <div class="boxes">
+          <input type="text" name="pName0" placeholder="Oyuncu İsmi 1">
+          <br>
+          <input type="text" name="pName1" placeholder="Oyuncu İsmi 2">
+          <br>
+          <input type="text" name="pName2" placeholder="Oyuncu İsmi 3">
+          <br>
+          <input type="text" name="pName3" placeholder="Oyuncu İsmi 4" style="display:none">
+          <br>
+          <input type="text" name="pName4" placeholder="Oyuncu İsmi 5" style="display:none">
+          <br>
+          <input type="text" name="pName5" placeholder="Oyuncu İsmi 6" style="display:none">
+          <br>
+          <input type="text" name="pName6" placeholder="Oyuncu İsmi 7" style="display:none">
+          <br>
+          <input type="text" name="pName7" placeholder="Oyuncu İsmi 8" style="display:none">
+          <br>
+          <input type="text" name="pName8" placeholder="Oyuncu İsmi 9" style="display:none">
+          <br>
+          <input type="text" name="pName9" placeholder="Oyuncu İsmi 10" style="display:none">
+          <br>
+        </div>
+        <div class="startgame">
+          <button onclick="startGame();">Oyunu Başlat!</button>
+        </div>
+        <div class="howPlay" href="#">
+          <a onclick="howTo();">Nasıl Oynanır</a>
+        </div>
+      </div>
+      <div id="HowTo" class="flex-container" style="display:none; padding-top: 50px">
+        <div class="title">
+          <h1>
+            <br>Funemployed Oyununa Hoş Geldin!
+          </h1>
+        </div>
+        <div class="paragraph">
+          <h5>Oyunu başlatmak için ilk oyuncu işveren olarak seçilir. Diğer kişiler işe başvuran kişi olarak başlar, her başvuran 4 ayrı özellik kartı alır. <br>
+            <br> İşveren herkese sırayla hak vererek, kendilerini verilen özellik kartlarını kullanarak işi elde etmek için ikna etmesini ister. İşverenin kişisel istekleri ona kalmıştır. <br>
+            <br> Her başvuru yapan kişiye sırayla hak verildikten sonra işveren bir aday seçer ve seçilen aday 1 puan kazanmış olur böylece sıradaki tura geçilir.
+          </h5>
+        </div>
+        <div class="goback">
+          <button onclick="goBack();">Geri Git</button>
+        </div>
+      </div>
+      <div id="GamePage" style="display:none; padding-top: 50px">
+        <h1>İsveren: Oyuncu 3</h1>
+        <h2>Aranıyor: Kapıcı</h2>
+        <br>
+        <div id="currentQuals">
+          <h3>Oyuncu İsmi</h3>
+          <h2>Nitelikler</h2>
+          <button onclick="nextQual();">Sıradaki Nitelik</button>
+          <h4>Niteliklerin</h4>
+        </div>
+        <div id="pickWinner" style="display: none">
+          <h2>Yeni Çalışanınız Kim?</h2>
+        </div>
+        <br>
+        <br>
+        <div id="pastQuals"> İş Adayları <table></table>
+        </div>
+      </div>
+      <div id="ScorePage" style="display:none; padding-top: 50px">
+        <h1>Oyuncu 1 Janitor!</h1>
+        <h2>
+          <u>Şu anki Skorlar</u>
+        </h2>
+        <button onclick="nextRound();">Sıradaki Tur</button>
+        <button onclick="endGame();">Oyunu Bitir</button>
+      </div>
+    </div>
+    <script src="javascript/vars.js"></script>
+    <script src="javascript/script.js"></script>
+  </body>
+</html>
